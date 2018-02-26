@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"§ href="public/css/animate.css" />
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Russo+One');
+  </style>
+  <title>Princess Leia</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+
+h1, h2, h3, h4 , h5, p {
+    font-family: 'Russo One', sans-serif;
+}
+
+p {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+.well {
+
+  float:none;
+  clear:left;
+  position: relative;
+}
+
+.top {
+  position:absolute;
+  z-index: 9;
+  margin-top:-470px;
+  margin-left: 30px;
+
+}
+
+    .card-deck {
+      display: flex;
+
+    }
+
+
+    .card {
+      padding: 10px;
+
+    }
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+
+      background-color: rgba(214, 189, 18, 0.04);
+      padding:inherit;
+
+
+    }
+
+    /* Set gray background color and 100% height */
+
+
+    .sidenav1{
+      position:relative;
+      float:left;
+      padding-top: 20px;
+      background-color: rgba(214, 189, 18, 0.3);
+      height: 100%;
+      padding-bottom: 20px;
+
+    }
+    .sidenav2 {
+      padding-top: 20px;
+      background-color: rgba(214, 189, 18, 0.03);
+      height: 100%;
+      padding-bottom: 15px;
+
+    }
+
+
+    .card{
+      padding-top: 20px;
+      background-color: rgba(214, 189, 18, 0.2);
+      height: 100%;
+      padding-bottom: 20px;
+      margin: 5px;
+
+    }
+    .speeder {
+      margin-top: 30px;
+
+
+    }
+
+    .soundeffects {
+    visibility: hidden;
+    }
+    .sidenav {
+      padding-top: 20px;
+      background-color: none;
+      height: 100%;
+      padding-bottom: 20px;
+
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 1rem;
+      text-align: center;
+
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+
+
+      .row.content {height:auto;}
+    }
+    .imag-gal{
+      position:relative;
+      margin:20px;
+      padding:20px 0px 0px 0px;
+      color:white;
+
+    }
+    .col-2{
+        box-sizing: border-box;
+        padding: 0px 5px 0px 5px;
+        background-clip: content-box;
+        background-color:blue;
+        height:20px;
+
+    }
+
+    .imag-gal .row .column:first-child {
+      padding-left: 0px;
+    }
+
+    .imag-gal .row {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .imag-gal .row .column:last-child {
+      padding-right: 0px;
+    }
+
+
+
+    .row > .column {
+      padding: 0 8px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Create four equal columns that floats next to eachother */
+    .column {
+      float: left;
+      width: 25%;
+
+    }
+
+
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    /* The Close Button */
+    .close {
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #999;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Hide the slides by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Caption text */
+    .caption-container {
+      text-align: center;
+      background-color: black;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    img.demo {
+      display:none;
+      opacity: 0;
+    }
+
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+
+    img.hover-shadow {
+      transition: 0.3s
+    }
+
+    .hover-shadow:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+
+    .bt_hidden {
+      opacity: 0;
+    }
+
+    .bt_visible {
+      opacity: 1;
+    }
+
+
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse dynpost">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=""><img src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg" width = 90px</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav animated swing">
+        <li class="active"><a href="#"><h4>Coder Space Star Wars Character Database Project Page</h4> <h5> <i> May the Code be With You</i></h5></a></li>
+    </div>
+  </div>
+</nav>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="https://img.huffingtonpost.com/asset/586617791900002a000e22a5.jpeg?cache=p6yaxzb2rt&ops=scalefit_720_noupscale" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="https://i.ytimg.com/vi/3L_a9HxXzS0/maxresdefault.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="https://ewedit.files.wordpress.com/2017/01/princess-leia.jpg?w=2000" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div lass="column gallerythumbs">
+      <img class="demo" src="https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg" onclick="currentSlide(1)" alt="Leia">
+    </div>
+
+    <div class="column gallerythumbs">
+      <img class="demo" src="https://img.huffingtonpost.com/asset/586617791900002a000e22a5.jpeg?cache=p6yaxzb2rt&ops=scalefit_720_noupscale" onclick="currentSlide(2)" alt="Leia">
+    </div>
+
+    <div class="column gallerythumbs">
+      <img class="demo" src="https://i.ytimg.com/vi/3L_a9HxXzS0/maxresdefault.jpg" onclick="currentSlide(3)" alt="Leia">
+    </div>
+
+    <div class="column ">
+      <img class="demo" src="https://ewedit.files.wordpress.com/2017/01/princess-leia.jpg?w=2000" onclick="currentSlide(4)" alt="Leia">
+    </div>
+  </div>
+</div>
+<div class="container-fluid text-center dynpost">
+  <div class="row content">
+    <div class="col-sm-2 sidenav1 animated swing">
+        <img class='dynpost profile' src="https://heavyeditorial.files.wordpress.com/2016/12/gettyimages-472543728.jpg?quality=65&strip=all&w=1368" width= 100% >
+    </div>
+        <div class="col-sm-8 text-left dynpost" >
+          <br>
+          <h1>Princess Leia</h1>
+          <br>
+          <p class="text-justify" id='content'></p>
+
+          <h1 class="dynpost">Gallery</h1>
+          <br>
+          <br>
+              <div class="row">
+                <div class="column dynpost gallery">
+                  <img src="https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" width= 150px>
+                </div>
+                    <div class="column dynpost gallery">
+                      <img src="https://img.huffingtonpost.com/asset/586617791900002a000e22a5.jpeg?cache=p6yaxzb2rt&ops=scalefit_720_noupscale" onclick="openModal();currentSlide(2)" class="hover-shadow" width= 150px>
+                    </div>
+                        <div class="column dynpost gallery">
+                          <img src="https://i.ytimg.com/vi/3L_a9HxXzS0/maxresdefault.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" width= 140px>
+                        </div>
+                            <div class="column dynpost gallery">
+                              <img src="https://ewedit.files.wordpress.com/2017/01/princess-leia.jpg?w=2000" onclick="openModal();currentSlide(4)" class="hover-shadow" width= 120px>
+                            </div>
+              </div>
+
+                        <!-- The Modal/Lightbox -->
+
+
+
+                              <h1>Adventures</h1>
+                              <br>
+                              <div class="card-deck dynpost">
+                              <div class="card z1">
+                                <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX148_CR0,0,148,216_AL_.jpg" alt="Card image cap">
+                                <div class="card-block">
+                                  <h4 class="card-title" id='newHope'></h4>
+                                  <p class="card-text" id='nH'></p>
+                                  <p class="card-text"><small class="text-muted"></small></p>
+                                </div>
+                              </div>
+                              <div class="card z2">
+                                <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UX148_CR0,0,148,216_AL_.jpg" alt="Card image cap">
+                                <div class="card-block">
+                                  <h4 class="card-title" id='revengeSith'></h4>
+                                  <p class="card-text" id='rS'></p>
+                                  <p class="card-text"><small class="text-muted"></small></p>
+                                </div>
+                              </div>
+                              <div class="card z3">
+                                <img class="card-img-top"  src="https://images-na.ssl-images-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX148_CR0,0,148,216_AL_.jpg" alt="Card image cap">
+                                <div class="card-block">
+                                  <h4 class="card-title"id= 'returnJed'></h4>
+                                  <p class="card-text" id='rJ'></p>
+                                  <p class="card-text"><small class="text-muted"></small></p>
+                                </div>
+                              </div>
+
+                              <div class="card z4">
+                                <img class="card-img-top"  src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_UY216_CR7,0,148,216_AL_.jpg " alt="Card image cap">
+                                <div class="card-block">
+                                  <h4 class="card-title"id='EmpireStrikes'></h4>
+                                  <p class="card-text" id='eS'></p>
+                                  <p class="card-text"><small class="text-muted"></small></p>
+                                </div>
+                              </div>
+
+                              <div class="card z5" >
+                                <img class="card-img-top"  src="https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_UX148_CR0,0,148,216_AL_.jpg" alt="Card image cap">
+                                <div class="card-block">
+                                  <h4 class="card-title"id= 'forceAwakens'></h4>
+                                  <p class="card-text" id='fA'></p>
+                                  <p class="card-text"><small class="text-muted"></small></p>
+                                </div>
+                              </div>
+                              </div>
+                                    </div>
+                                  <div class="col-sm-2 sidenav2">
+                                       <div class="well">
+                                         <h3>Star Wars Tweets</h3>
+                                         <a class="twitter-timeline" href="https://twitter.com/hashtag/StarWars" data-widget-id="957330124516614149"><p>#StarWars Tweets</p></a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                       </div>
+                                       <div>
+                                       <img class= 'ewok' src=https://i.pinimg.com/originals/f6/8c/36/f68c360915aa654a7c0af42f7f29a195.jpg width = 50px>
+                                       </div>
+                                       </div>
+
+                              </div>
+
+                              </div>
+
+                              <div class='top'>
+                              <img class= 'flyin dynpost' src='https://vignette.wikia.nocookie.net/disney/images/7/7f/Princess_Leia_render.png/revision/latest?cb=20170217081817' width= '260px'>
+                              </div>
+
+
+                                  <div class="col-sm-2 sidenav">
+
+                                  </div>
+                                  <div class="col-sm-8 text-left dynpost" >
+
+                                </div>
+
+                                  </div>
+
+                                  <div class= 'dynpost'>
+                                <img class= 'speeder' src='http://clipart.info/images/ccovers/1513358463Air%20Hogs%20Speeder%20transparent%20PNG.png'>
+                                </div>
+
+
+                                <div class='soundeffects'>
+                                            <audio id="song1" controls>
+                                                 <source src="http://soundfxcenter.com/movies/star-wars/8d82b5_Ewok_Wicket_Talking_Sound_Effect.mp3" type="audio/mpeg">
+                                               </audio>
+                                               <audio id="song2" controls>
+                                                    <source src="http://www.threecaster.com/wavy/torpedo.wav" type="audio/mpeg">
+                                                  </audio>
+                                                  <audio id="song3" controls>
+                                                       <source src="http://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Speeder+bike+flyby&filename=23/234264-4bb2470f-1b6f-4faf-8716-1a77604e7b50.mp3" type="audio/mpeg">
+                                                     </audio>
+
+                                </div>
+
+
+
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script type="application/javascript" src="public/js/project leia.js"></script>
+            <script src="public/js/viewportchecker.js"></script>
+            <script>
+        $(document).ready(function(){
+        //Plays the file when the mouse is over the element
+            $(".ewok").mouseover (function (){
+
+                $("#song1")[0].play();
+            });
+        });
+            $(document).ready(function(){
+                $(".top").mouseover (function (){
+                    $("#song2")[0].play();
+                        });
+                    });
+
+                    $(document).ready(function(){
+                          $(".speeder").mouseover (function (){
+                              $("#song3")[0].play();
+                            });
+                        });
+    </script>
+            <script>
+
+              $(document).ready(function() {
+                      $('.dynpost').addClass("bt_hidden").viewportChecker({
+                      classToAdd: 'bt_visible animated lightSpeedIn',
+                      offset: 100,
+                      repeat: true,
+                      callbackFunction: function(elem, action){},
+                      scrollHorizontal: false
+                      });
+                      });
+
+                        $('.z1').mouseover(function() {
+                          $('.z1').addClass('animated pulse');
+                        })
+                          $('.z2').mouseover(function() {
+                            $('.z2').addClass('animated lightSpeedOut');
+                          })
+                            $('.z3').mouseover(function() {
+                              $('.z3').addClass('animated pulse');
+                            })
+                              $('.z4').mouseover(function() {
+                                $('.z4').addClass('animated pulse');
+                              })
+                                $('.z4').mouseover(function() {
+                                  $('.z4').addClass('animated pulse');
+                                })
+                                $('.z5').mouseover(function() {
+                                  $('.z5').addClass('animated pulse');
+                                })
+                            $('.top').mouseover(function() {
+                            $('.top').addClass('animated bounceOutUp');
+                            })
+                              $('.speeder ').mouseover(function() {
+                              $('.speeder').addClass('animated bounceOutRight');
+                              })
+                              $('.ewok').mouseover(function() {
+                              $('.ewok').addClass('animated bounceOutDown');
+                              })
+
+            </script>
+
+</body>
+
+
+</html>
